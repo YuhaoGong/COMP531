@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Menlo}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Menlo; min-height: 13.0px}
+    span.s1 {font-variant-ligatures: no-common-ligatures}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE HTML&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en-US"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Simple Page&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="author" content= “Yuhao Gong”&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Registration Simple Page : Homework 1&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;h1&gt;Registration Form&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1">&lt;hr/&gt;</span></p>
+<p class="p1"><span class="s1">&lt;form id="AccountInfo" method="post" action="#"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Account Name&lt;br&gt;&lt;input type="text" name="name" required&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Email Address&lt;br&gt;&lt;input type="email" name="emailaddress" required placeholder="example:a@b.c"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Phone Number&lt;br&gt;&lt;input type="tel" name="phonenumber" required placeholder="example:xxx-xxx-xxxx" pattern='\d\d\d-\d\d\d-\d\d\d\d'&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Date of Birth&lt;br&gt;&lt;input type="text" name="birthday" required pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy"&gt;&lt;/p&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Zipcode&lt;br&gt;&lt;input type="text" name="zipcode" required placeholder="00000" pattern="\d\d\d\d\d"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Password&lt;br&gt;&lt;input type="password" name="pwd1" required&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Password Confirmation&lt;br&gt;&lt;input type="password" name="pwd2" required&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;input type="hidden" id="ts" name="timestamp" value=""&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;input type="submit" value="Submit" onclick="return checkForm()"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;input type="reset" value="Reset"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/form&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">//validate the username and password</span></p>
+<p class="p1"><span class="s1">function checkForm(form)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>form=document.getElementById('AccountInfo')</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(form.pwd1.value != "" &amp;&amp; form.pwd1.value == form.pwd2.value) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(form.pwd1.value.length &lt; 6) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>alert("Error: Password must contain at least six characters!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>form.pwd1.focus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(form.pwd1.value == form.name.value) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>alert("Error: Password must be different from Accountname!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>form.pwd1.focus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>alert("Error: Please check that you've entered and confirmed your password!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>form.pwd1.focus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>//check whether the user is 18 or older</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var today = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var birthDate = form.birthday.value.split("/");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var usermonth = birthDate[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var userday = birthDate[1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var useryear = birthDate[2];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var currentday = today.getDate();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var currentmonth = today.getMonth()+1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var currentyear = today.getFullYear();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var age = currentyear - useryear;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if ((currentmonth &lt; usermonth) || ((currentmonth == usermonth) &amp;&amp; (currentday &lt; userday))) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>age--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}<span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (age &lt; 18) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span></span>alert("Sorry: Register must be 18 years old or older!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>//get the time stamp</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var n = event.timeStamp</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("ts").value = n</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// This function executes after the document has been loaded</span></p>
+<p class="p1"><span class="s1">window.onload = function() {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>var form = document.forms[0]</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>var values = location.search.substring(1).split('&amp;')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>.filter(function(e) { return (e.length) })</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>// prepopulate the form from the query string<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>values.forEach(function(tuple) {<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>var kv = tuple.split('=')<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>var el = form[kv[0]]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>var value = kv[1]</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// if a checkbox then we need to iterate to check the correct boxes.<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>var len = el.length</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>if (len &amp;&amp; el[0].type === "checkbox") {<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>for (var ii = 0; ii &lt; len; ++ii) {<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>if (el[ii].value === value) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>el[ii].checked = true</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>el.value = decodeURIComponent(value).replace(/\+/g, ' ')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>})</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>if (values.length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>alert('Prepopulated your form with query string values')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <title>Simple Page</title>
+  <meta charset="UTF-8">
+  <meta name="author" content= “Yuhao Gong”>
+  <title>Registration Simple Page : Homework 1</title>
+</head>
+<body>
+ 
+<h1>Registration Form</h1>
+<hr/>
+<form id="AccountInfo" method="GET" action="formProcessor.html">
+ 
+    <label for="Accountname">
+      Account Name<br>
+      <input type="text" name="name" placeholder= "account name" required pattern="[a-zA-z]+[0-9a-zA-Z]$?">
+    </label>
+    <br><br>
+
+ 
+    <label for="emailaddress">
+      Email Address<br>
+      <input type="email" name="emailaddress" required placeholder="example:a@b.c" pattern="[A-Za-z0-9]$?+@[A-Za-z0-9]$?+\.[A-Za-z]$?">
+    </label>
+    <br><br>
+ 
+    <label for="phonenumber">
+      Phone Number<br>
+      <input type="tel" name="phonenumber" required placeholder="example:xxx-xxx-xxxx" pattern='\d\d\d-\d\d\d-\d\d\d\d'>
+    </label>
+    <br><br>
+ 
+    <label for="birthday">
+      Date of Birth<br>
+      <input type="text" name="birthday" required pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy">
+    </label> 
+    <br><br>
+ 
+    <label for="zipcode">
+      Zipcode<br>
+      <input type="text" name="zipcode" required placeholder="00000" pattern="\d\d\d\d\d">
+    </label>
+    <br><br>
+ 
+    <label for="password">
+      Password<br><input type="password" name="pwd1" required>
+    </label>
+    <br><br>
+ 
+    <label for="passwordconfirmation">
+      Password Confirmation<br>
+      <input type="password" name="pwd2" required>
+    </label>
+    <br><br>
+ 
+    <label for="timestamp">
+      <input type="hidden" id="ts" name="timestamp" value="">
+    </label>
+ 
+    <input type="submit" value="Submit" onclick="return checkForm()">
+ 
+    <input type="reset" value="Reset">
+ 
+</form>
+ 
+<script>
+//validate the username and password
+function checkForm(form)
+  {
+  form=document.getElementById('AccountInfo')
+  
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.name.value) {
+        alert("Error: Password must be different from Accountname!");
+        form.pwd1.focus();
+        return false;
+      }
+    }else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+    
+    //check whether the user is 18 or older
+    var today = new Date();
+    var birthDate = form.birthday.value.split("/");
+    
+    var usermonth = birthDate[0];
+    var userday = birthDate[1];
+    var useryear = birthDate[2];
+    
+    var currentday = today.getDate();
+    var currentmonth = today.getMonth()+1;
+    var currentyear = today.getFullYear();
+    
+    var age = currentyear - useryear;
+    
+    if ((currentmonth < usermonth) || ((currentmonth == usermonth) && (currentday < userday))) {
+        age--;
+    }     
+    if (age < 18) {
+      alert("Sorry: Register must be 18 years old or older!");
+      return false;
+    }
+ 
+    //get the time stamp
+    var n = event.timeStamp
+    document.getElementById("ts").value = n
+  }
+ 
+ 
+</script>
+ 
+</body>
+</html>
