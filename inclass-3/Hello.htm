@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.clear.rice.edu/comp431/sample/hello.html -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hello HTML!</title>
+    
+</head>
+
+<body>
+
+<table border="1">
+	<tbody><tr><td>Athenian</td><td>Owl</td></tr>
+	<tr><td colspan="2"><img src="./Hello HTML!_files/riceacademicseal1.jpg"></td></tr>
+</tbody></table>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<ul>
+	<li><a href="http://www.rice.edu/">Rice</a></li>
+	<li><a href="http://www.chron.com/">Houston Chronicle</a></li>
+	<li><a href="http://www.twitter.com/">Twitter</a></li>
+	<li><a href="http://www.twosigma.com/">TwoSigma</a></li>
+</ul>
+
+<textarea id='textarea' rows="10" cols="50">
+
+ --- Enter your message here --- 
+
+
+</textarea><br>
+
+<input type="button" value="clear" onclick="javascript:eraseText();">
+<br>
+
+<p>The page will redirct after <span id="countdown">15 s</span></p>
+
+<input type="button" onclick="pausecountdown()" value="Pause">
+
+<input type="button" onclick="resumecountdown()" value="Resume">
+
+<script>
+	function eraseText(){
+		document.getElementById("textarea").value = "";
+		
+	}
+
+	var f = function(a){
+		message = "the page will redirect when the counter reaches zero"
+		alert(message)
+	}
+	setTimeout(f, 5000)
+
+	var countdown = document.getElementById("countdown");
+	var stop = true;
+	var countdownInterval = setInterval(function(){
+		var time = parseInt(countdown.innerHTML);
+		countdown.innerHTML = time - 1 + ' s';
+		if (time == 1){
+			clearInterval(countdownInterval);
+			window.location.assign("https://www.clear.rice.edu/comp431/sample/hello.html")
+		}
+	},1000)
+
+	function pausecountdown(){
+		//clearInterval() is used to pause the timer
+		clearInterval(countdownInterval);
+		stop = false;
+	}
+
+	function resumecountdown(){
+		if (!stop){
+		//setInterval() is used to resume the timer
+			countdownInterval = setInterval(function(){
+				var time = parseInt(countdown.innerHTML);
+				countdown.innerHTML = time - 1 + ' s';
+				if (time == 1){
+					clearInterval(countdownInterval);
+					window.location.assign("https://www.clear.rice.edu/comp431/sample/hello.html")
+				}	
+			},1000);
+		}
+		stop = true;
+	}
+</script>
+</body>
+</html>
