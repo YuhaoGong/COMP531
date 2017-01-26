@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>User Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Yuhao Gong">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>User Profile</h1>
+
+<p>User Name:
+	<input type="text" id="inputname" placeholder= "account name">
+	<span id="displayname">Yuhao Gong</span>
+	<div id="namealert" style="display: none">
+		<span style="color: red">Please input a valid name!</span>
+	</div>
+</p>
+
+<p>Email Address:
+	<input type="email" id="inputemail" required placeholder="example:a@b.c">
+	<span id="displayemail">123456789@gmail.com</span>
+	<div id="emailalert" style="display: none">
+		<span style="color: red">Please input a valid Email Address!</span>
+	</div>
+</p>
+
+<p>Phone Number:
+	<input type="tel" id="inputnumber" required placeholder="example:xxx-xxx-xxxx">
+	<span id="displaynumber">123-456-7890</span>
+	<div id="phonealert" style="display: none">
+		<span style="color: red">Please input a valid Phone Number!</span>
+	</div>
+</p>
+
+<p>Zipcode:
+	<input type="text" id="inputzipcode" required placeholder="00000">
+	<span id="displayzipcode">77025</span>
+	<div id="zipcodealert" style="display: none">
+		<span style="color: red">Please input a valid Zipcode!</span>
+	</div>
+</p>
+
+<p>Password:
+	<input type="password" id="pwd1" name="pwd1">
+	<div id="pwdalert1" style="display: none">
+		<span style="color: red">Please input a Password!<br></span>
+	</div>
+
+
+   Password Confimation:
+	<input type="password" id="pwd2" name="pwd2">
+	<div id="pwdalert2" style="display: none">
+		<span style="color: red">Please enter the same Password!</span>
+	</div>
+</p>
+
+<p>
+	<input type="submit" value="Update" onclick="validate()">
+</p>
+
+
+<p class="redirect"><a href=main.html>Return to the main page</a></p>
+
+<script src="profile.js"></script>
+</body>
+</html>
